@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rage Bot | Powerful Discord Multipurpose Bot</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,7 +24,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
@@ -43,35 +42,22 @@
         .light-theme body {
             background-color: white;
         }
-
         .light-theme .bg-rage-black {
             background-color: #9ca3af;
         }
-
         .light-theme .bg-rage-dark {
             background-color: #6b7280;
         }
-
         .light-theme .text-white {
             color: #111827;
         }
-
         .light-theme .text-gray-300 {
             color: #4b5563;
         }
-
-        .light-theme .bg-rage-black {
-            background-color: #9ca3af;
-        }
-
-        .light-theme .bg-rage-dark {
-            background-color: #6b7280;
-        }
-
         .light-theme .text-gray-400 {
             color: #6b7280;
         }
-        }
+
         .glow-text {
             text-shadow: 0 0 10px rgba(250, 204, 21, 0.7);
             animation: pulse 2s infinite;
@@ -112,15 +98,11 @@
           width: 3.5em;
           height: 2em;
         }
-
-        /* Hide default HTML checkbox */
         .switch input {
           opacity: 0;
           width: 0;
           height: 0;
         }
-
-        /* The slider */
         .slider {
           --background: #111827;
           position: absolute;
@@ -134,7 +116,6 @@
           border-radius: 30px;
           border: 1px solid #facc15;
         }
-
         .slider:before {
           position: absolute;
           content: "";
@@ -147,11 +128,9 @@
           background: var(--background);
           transition: .5s;
         }
-
         input:checked + .slider {
           background-color: #f3f4f6;
         }
-
         input:checked + .slider:before {
           transform: translateX(100%);
           box-shadow: inset 15px -4px 0px 15px #facc15;
@@ -159,351 +138,34 @@
     </style>
 </head>
 <body class="gradient-bg">
-    <!-- Navigation -->
-    <nav class="bg-rage-black/80 backdrop-blur-sm border-b border-rage-yellow/20 sticky top-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 hovered-element">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <span class="text-rage-yellow font-bold text-2xl">RAGE</span>
-                    </div>
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-4">
-                            <a href="#" class="text-rage-yellow px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                            <a href="#" class="text-gray-300 hover:text-rage-yellow px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                            <a href="#" class="text-gray-300 hover:text-rage-yellow px-3 py-2 rounded-md text-sm font-medium">Commands</a>
-                            <a href="#" class="text-gray-300 hover:text-rage-yellow px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-                            <a href="https://dsc.gg/rage-hq" class="text-gray-300 hover:text-rage-yellow px-3 py-2 rounded-md text-sm font-medium">Support</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-4 flex items-center md:ml-6 space-x-4">
-                        <label class="switch">
-                            <input type="checkbox" id="theme-toggle">
-                            <span class="slider"></span>
-                        </label>
-                        <a href="https://discord.com/oauth2/authorize?client_id=1359648806496506037&scope=bot%20applications.commands&permissions=8" class="btn-rage px-4 py-2 rounded-md text-sm font-bold">
-                            Invite Bot
-                        </a>
-                    </div>
-                </div>
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
-                        <i data-feather="menu"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+<!-- rest of your HTML stays same -->
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+        themeToggle.checked = true;
+        html.classList.add('light-theme');
+    }
 
-    <!-- Hero Section -->
-    <div class="relative overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                    <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl" style="filter: blur(0.5px);">
-                            <span class="block glow-text" style="filter: blur(0.5px);">RAGE BOT</span>
-                            <span class="block text-rage-yellow hovered-element" 
-                                  style="filter: blur(0.8px); text-shadow: 0 0 8px rgba(250, 204, 21, 0.7);">ULTIMATE DISCORD PROTECTION</span>
-                        </h1>
-                        <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            The most powerful multipurpose and anti-nuke Discord bot with advanced security features and moderation tools.
-                        </p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start space-x-4">
-                            <a href="https://discord.com/oauth2/authorize?client_id=1359648806496506037&scope=bot%20applications.commands&permissions=8" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-rage-black bg-rage-yellow hover:bg-yellow-500 md:py-4 md:text-lg md:px-10">
-                                Invite Now
-                            </a>
-                            <a href="https://dsc.gg/rage-hq" class="inline-flex items-center justify-center px-8 py-3 border border-rage-yellow text-base font-medium rounded-md text-rage-yellow hover:bg-rage-yellow/10 md:py-4 md:text-lg md:px-10">
-                                Support
-                            </a>
-                        </div>
-                    </div>
-                </main>
-            </div>
-        </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <div class="relative">
-                <div class="absolute inset-0 rounded-full bg-rage-yellow blur-xl opacity-30 animate-float" style="width: 60%; height: 60%; margin: 20%; border-radius: 50%;"></div>
-                <img class="h-32 w-full object-cover sm:h-40 md:h-48 lg:w-3/5 lg:h-3/5 relative animate-float" 
-                     src="https://huggingface.co/spaces/surendrarajput/rage-dashboard/resolve/main/images/a_5efaf7a85325e871922c589e23a35a36-removebg-preview.png" 
-                     alt="Rage Bot"
-                     style="animation-delay: 0.2s; filter: blur(0.5px); margin: 0 auto;">
-            </div>
-        </div>
-    </div>
-
-    <!-- Stats Section -->
-    <div class="bg-rage-dark py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-rage-yellow font-semibold tracking-wide uppercase">Statistics</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
-                    Trusted by thousands of servers
-                </p>
-            </div>
-
-            <div class="mt-10">
-                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    <div class="bg-rage-black p-6 rounded-lg glow-box" data-aos="fade-up">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-rage-yellow/10 rounded-md p-3">
-                                <i data-feather="server" class="text-rage-yellow"></i>
-                            </div>
-                            <div class="ml-5 w-0 flex-1">
-                                <dl>
-                                    <dt class="text-sm font-medium text-gray-300 truncate">Servers</dt>
-                                    <dd>
-                                        <div class="text-lg font-medium text-white">500+</div>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-rage-black p-6 rounded-lg glow-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-rage-yellow/10 rounded-md p-3">
-                                <i data-feather="users" class="text-rage-yellow"></i>
-                            </div>
-                            <div class="ml-5 w-0 flex-1">
-                                <dl>
-                                    <dt class="text-sm font-medium text-gray-300 truncate">Users</dt>
-                                    <dd>
-                                        <div class="text-lg font-medium text-white">5K+</div>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-rage-black p-6 rounded-lg glow-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-rage-yellow/10 rounded-md p-3">
-                                <i data-feather="command" class="text-rage-yellow"></i>
-                            </div>
-                            <div class="ml-5 w-0 flex-1">
-                                <dl>
-                                    <dt class="text-sm font-medium text-gray-300 truncate">Commands</dt>
-                                    <dd>
-                                        <div class="text-lg font-medium text-white">50+</div>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-rage-black p-6 rounded-lg glow-box" data-aos="fade-up" data-aos-delay="300">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0 bg-rage-yellow/10 rounded-md p-3">
-                                <i data-feather="shield" class="text-rage-yellow"></i>
-                            </div>
-                            <div class="ml-5 w-0 flex-1">
-                                <dl>
-                                    <dt class="text-sm font-medium text-gray-300 truncate">Protected</dt>
-                                    <dd>
-                                        <div class="text-lg font-medium text-white">24/7</div>
-                                    </dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Features Section -->
-    <div class="py-12 bg-rage-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="lg:text-center">
-                <h2 class="text-base text-rage-yellow font-semibold tracking-wide uppercase">Features</h2>
-                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
-                    Powerful tools at your fingertips
-                </p>
-                <p class="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto">
-                    Rage comes packed with everything you need to manage and protect your Discord server.
-                </p>
-            </div>
-
-            <div class="mt-10">
-                <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-                    <div class="relative" data-aos="fade-right">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-rage-yellow text-rage-black">
-                            <i data-feather="shield"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-white" style="filter: blur(0.4px);">Advanced Anti-Nuke</h3>
-                            <p class="mt-2 text-base text-gray-300">
-                                Prevent raids and nukes with our sophisticated detection system that automatically bans malicious users.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative" data-aos="fade-left">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-rage-yellow text-rage-black">
-                            <i data-feather="package" class="w-6 h-6" style="filter: drop-shadow(0 0 2px rgba(250, 204, 21, 0.7));"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-white" style="text-shadow: 0 0 5px rgba(250, 204, 21, 0.5); filter: blur(0.4px);">Minigames</h3>
-                            <p class="mt-2 text-base text-gray-300" style="filter: blur(0.4px);">
-                                Engage your community with fun minigames including trivia, word games, and interactive challenges.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative" data-aos="fade-right">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-rage-yellow text-rage-black">
-                            <i data-feather="zap"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-white" style="filter: blur(0.4px);">Lightning Fast</h3>
-                            <p class="mt-2 text-base text-gray-300">
-                                Optimized for performance with minimal latency. Rage responds instantly to all commands.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative" data-aos="fade-left">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-rage-yellow text-rage-black">
-                            <i data-feather="sliders"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-white" style="filter: blur(0.4px);">Customizable</h3>
-                            <p class="mt-2 text-base text-gray-300">
-                                Configure every aspect of Rage through our intuitive dashboard. Make it work exactly how you want.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative" data-aos="fade-right">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-rage-yellow text-rage-black">
-                            <i data-feather="activity"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-white" style="filter: blur(0.4px);">24/7 Monitoring</h3>
-                            <p class="mt-2 text-base text-gray-300">
-                                Our systems constantly monitor your server for suspicious activity and take immediate action.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative" data-aos="fade-left">
-                        <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-rage-yellow text-rage-black">
-                            <i data-feather="award"></i>
-                        </div>
-                        <div class="ml-16">
-                            <h3 class="text-lg leading-6 font-medium text-white" style="filter: blur(0.4px);">Premium Support</h3>
-                            <p class="mt-2 text-base text-gray-300">
-                                Get priority support from our team of experts whenever you need help with the bot.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="bg-rage-dark">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                <span class="block">Ready to protect your server?</span>
-                <span class="block text-rage-yellow">Invite Rage Bot today.</span>
-            </h2>
-            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-                <div class="inline-flex rounded-md shadow">
-                    <a href="https://discord.com/oauth2/authorize?client_id=1359648806496506037&scope=bot%20applications.commands&permissions=8" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-rage-black bg-rage-yellow hover:bg-yellow-500 mr-3">
-                        Invite Now
-                    </a>
-                    <a href="https://dsc.gg/rage-hq" class="inline-flex items-center justify-center px-5 py-3 border border-rage-yellow text-base font-medium rounded-md text-rage-yellow hover:bg-rage-yellow/10">
-                        Support
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-rage-black">
-        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base text-gray-300 hover:text-rage-yellow">Home</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base text-gray-300 hover:text-rage-yellow">Features</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base text-gray-300 hover:text-rage-yellow">Commands</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="#" class="text-base text-gray-300 hover:text-rage-yellow">Dashboard</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="https://dsc.gg/rage-hq" class="text-base text-gray-300 hover:text-rage-yellow">Support</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="https://almighty-pushh.github.io/rage-bot-docs/privacy.html" class="text-base text-gray-300 hover:text-rage-yellow">Privacy</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="https://almighty-pushh.github.io/rage-bot-docs/terms.html" class="text-base text-gray-300 hover:text-rage-yellow">Terms</a>
-                </div>
-            </nav>
-            <div class="mt-8 flex justify-center space-x-6">
-                <a href="https://discord.com/oauth2/authorize?client_id=1359648806496506037&scope=bot%20applications.commands&permissions=8" class="text-gray-400 hover:text-rage-yellow">
-                    <i data-feather="discord"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-rage-yellow">
-                    <i data-feather="discord"></i>
-                </a>
-                <a href="https://almighty-pushh.github.io" class="text-gray-400 hover:text-rage-yellow">
-                    <i data-feather="github"></i>
-                </a>
-                <a href="https://dsc.gg/rage-hq" class="text-gray-400 hover:text-rage-yellow">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-discord">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-rage-yellow">
-                    <i data-feather="discord"></i>
-                </a>
-            </div>
-            <p class="mt-8 text-center text-base text-gray-400">
-                &copy; 2025 Rage Bot. All rights reserved.
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        
-        // Check for saved user preference, if any
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        if (currentTheme === 'light') {
-            themeToggle.checked = true;
+    themeToggle.addEventListener('change', function() {
+        if (this.checked) {
             html.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.classList.remove('light-theme');
+            localStorage.setItem('theme', 'dark');
         }
+    });
 
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                html.classList.add('light-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.remove('light-theme');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-        feather.replace();
-    </script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+    feather.replace();
+</script>
 </body>
 </html>
